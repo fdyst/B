@@ -1,0 +1,172 @@
+2026-02-21 10:45:42,367 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:18:44,076 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:20:22,065 | WARNING | app | 🛑 Application shutting down
+2026-02-21 11:20:26,442 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:20:36,419 | WARNING | app | 🛑 Application shutting down
+2026-02-21 11:20:52,360 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:21:51,688 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-21 11:21:51,694 | INFO | app | ⬅️  Status: 200
+2026-02-21 11:21:53,784 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-21 11:21:53,867 | INFO | app | ⬅️  Status: 200
+2026-02-21 11:22:39,962 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-21 11:22:39,966 | INFO | app | ⬅️  Status: 200
+2026-02-21 11:22:40,654 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-21 11:22:40,655 | INFO | app | ⬅️  Status: 200
+2026-02-21 11:23:52,425 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/forgot-password
+2026-02-21 11:26:44,395 | WARNING | app | 🛑 Application shutting down
+2026-02-21 11:26:49,058 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:28:15,085 | WARNING | app | 🛑 Application shutting down
+2026-02-21 11:29:00,232 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:30:03,918 | INFO | app | ➡️  GET http://127.0.0.1:8000/auth/register
+2026-02-21 11:30:03,920 | INFO | app | ⬅️  Status: 405
+2026-02-21 11:30:04,024 | INFO | app | ➡️  GET http://127.0.0.1:8000/favicon.ico
+2026-02-21 11:30:04,025 | INFO | app | ⬅️  Status: 404
+2026-02-21 11:30:36,092 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-21 11:32:34,663 | WARNING | app | 🛑 Application shutting down
+2026-02-21 11:32:39,239 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:33:10,795 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-21 11:34:52,644 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-21 11:37:52,751 | WARNING | app | 🛑 Application shutting down
+2026-02-21 11:40:37,585 | INFO | app | 🚀 Application startup complete
+2026-02-21 11:41:01,959 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-21 11:48:30,726 | INFO | app | 🚀 Starting application...
+2026-02-21 11:48:30,744 | INFO | app | ✅ Database file found.
+2026-02-21 11:48:30,881 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-21 11:48:30,884 | WARNING | app | 🛑 Application shutting down
+2026-02-21 17:31:34,911 | INFO | app | 🚀 Starting application...
+2026-02-21 17:31:34,932 | INFO | app | ✅ Database file found.
+2026-02-21 17:31:34,945 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-21 18:24:00,820 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-21 18:25:00,840 | WARNING | app | 🛑 Application shutting down
+2026-02-21 18:25:59,318 | INFO | app | 🚀 Starting application...
+2026-02-21 18:25:59,338 | INFO | app | ✅ Database file found.
+2026-02-21 18:25:59,352 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-21 18:26:07,688 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-21 19:33:41,230 | WARNING | app | 🛑 Application shutting down
+2026-02-21 23:51:01,153 | INFO | app | 🚀 Starting application...
+2026-02-21 23:51:01,155 | INFO | app | ✅ Database file found.
+2026-02-21 23:51:01,168 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-21 23:51:23,088 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-21 23:51:23,092 | INFO | app | ⬅️  Status: 200
+2026-02-21 23:51:23,308 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-21 23:51:23,429 | INFO | app | ⬅️  Status: 200
+2026-02-21 23:51:28,378 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-22 00:26:38,538 | INFO | app | 🚀 Starting application...
+2026-02-22 00:26:38,558 | INFO | app | ✅ Database file found.
+2026-02-22 00:26:38,574 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 00:26:54,452 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-22 00:26:54,455 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:26:55,016 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-22 00:26:55,109 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:27:03,480 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-22 00:27:04,203 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:27:38,779 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-22 00:27:39,245 | INFO | app | ⬅️  Status: 400
+2026-02-22 00:28:34,965 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-22 00:28:35,447 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:30:11,745 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/forgot-password
+2026-02-22 00:30:11,858 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:30:40,089 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/reset-password
+2026-02-22 00:30:40,099 | INFO | app | ⬅️  Status: 422
+2026-02-22 00:31:14,510 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/reset-password
+2026-02-22 00:31:14,565 | INFO | app | ⬅️  Status: 400
+2026-02-22 00:31:26,381 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/forgot-password
+2026-02-22 00:31:26,456 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:31:51,444 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/reset-password
+2026-02-22 00:31:51,892 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:32:19,705 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-22 00:32:20,148 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:37:38,445 | WARNING | app | 🛑 Application shutting down
+2026-02-22 00:37:50,700 | INFO | app | 🚀 Starting application...
+2026-02-22 00:37:50,703 | INFO | app | ✅ Database file found.
+2026-02-22 00:37:50,743 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 00:39:57,523 | WARNING | app | 🛑 Application shutting down
+2026-02-22 00:40:03,448 | INFO | app | 🚀 Starting application...
+2026-02-22 00:40:03,450 | INFO | app | ✅ Database file found.
+2026-02-22 00:40:03,467 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 00:41:17,425 | INFO | app | ➡️  GET http://127.0.0.1:8000/
+2026-02-22 00:41:17,469 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:41:36,064 | INFO | app | ➡️  GET http://127.0.0.1:8000/auth/me
+2026-02-22 00:41:36,094 | INFO | app | ⬅️  Status: 401
+2026-02-22 00:41:36,642 | INFO | app | ➡️  GET http://127.0.0.1:8000/favicon.ico
+2026-02-22 00:41:36,650 | INFO | app | ⬅️  Status: 404
+2026-02-22 00:43:02,642 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-22 00:43:03,320 | INFO | app | ⬅️  Status: 200
+2026-02-22 00:44:36,465 | INFO | app | ➡️  GET http://127.0.0.1:8000/auth/login
+2026-02-22 00:44:36,487 | INFO | app | ⬅️  Status: 405
+2026-02-22 00:50:26,470 | WARNING | app | 🛑 Application shutting down
+2026-02-22 00:50:35,362 | INFO | app | 🚀 Starting application...
+2026-02-22 00:50:35,365 | INFO | app | ✅ Database file found.
+2026-02-22 00:50:35,387 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:04:53,095 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:04:58,609 | INFO | app | 🚀 Starting application...
+2026-02-22 01:04:58,629 | INFO | app | ✅ Database file found.
+2026-02-22 01:04:58,641 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:06:16,875 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:06:21,556 | INFO | app | 🚀 Starting application...
+2026-02-22 01:06:21,558 | INFO | app | ✅ Database file found.
+2026-02-22 01:06:21,585 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:07:37,621 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:07:44,467 | INFO | app | 🚀 Starting application...
+2026-02-22 01:07:44,469 | INFO | app | ✅ Database file found.
+2026-02-22 01:07:44,482 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:09:02,073 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:09:07,945 | INFO | app | 🚀 Starting application...
+2026-02-22 01:09:07,967 | INFO | app | ✅ Database file found.
+2026-02-22 01:09:07,984 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:12:02,443 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:12:08,117 | INFO | app | 🚀 Starting application...
+2026-02-22 01:12:08,119 | INFO | app | ✅ Database file found.
+2026-02-22 01:12:08,189 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:15:18,928 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:15:25,802 | INFO | app | 🚀 Starting application...
+2026-02-22 01:15:25,804 | INFO | app | ✅ Database file found.
+2026-02-22 01:15:25,831 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:16:36,625 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:16:43,047 | INFO | app | 🚀 Starting application...
+2026-02-22 01:16:43,051 | INFO | app | ✅ Database file found.
+2026-02-22 01:16:43,097 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:17:36,199 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:17:42,257 | INFO | app | 🚀 Starting application...
+2026-02-22 01:17:42,276 | INFO | app | ✅ Database file found.
+2026-02-22 01:17:42,300 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:19:33,700 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:19:42,465 | INFO | app | 🚀 Starting application...
+2026-02-22 01:19:42,468 | INFO | app | ✅ Database file found.
+2026-02-22 01:19:42,494 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:21:23,314 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:24:54,076 | INFO | app | 🚀 Starting application...
+2026-02-22 01:24:54,082 | INFO | app | ✅ Database file found.
+2026-02-22 01:24:54,166 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:33:47,569 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:33:55,151 | INFO | app | 🚀 Starting application...
+2026-02-22 01:33:55,171 | INFO | app | ✅ Database file found.
+2026-02-22 01:33:55,187 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:35:34,767 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:35:39,915 | INFO | app | 🚀 Starting application...
+2026-02-22 01:35:39,916 | INFO | app | ✅ Database file found.
+2026-02-22 01:35:39,945 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:39:29,751 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:39:38,593 | INFO | app | 🚀 Starting application...
+2026-02-22 01:39:38,597 | INFO | app | ✅ Database file found.
+2026-02-22 01:39:38,637 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:40:42,532 | WARNING | app | 🛑 Application shutting down
+2026-02-22 01:40:47,688 | INFO | app | 🚀 Starting application...
+2026-02-22 01:40:47,690 | INFO | app | ✅ Database file found.
+2026-02-22 01:40:47,721 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 01:41:24,100 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-22 01:41:24,481 | INFO | app | ⬅️  Status: 200
+2026-02-22 01:44:17,138 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-22 01:44:17,151 | INFO | app | ⬅️  Status: 200
+2026-02-22 01:44:17,751 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-22 01:44:17,754 | INFO | app | ⬅️  Status: 200
+2026-02-22 01:44:46,261 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-22 01:44:46,467 | INFO | app | ⬅️  Status: 422
+2026-02-22 01:45:16,891 | INFO | app | ➡️  POST http://127.0.0.1:8000/products/
+2026-02-22 01:45:16,913 | INFO | app | ⬅️  Status: 401
+2026-02-22 01:45:31,191 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-22 01:45:31,917 | INFO | app | ⬅️  Status: 200
+2026-02-22 01:46:43,846 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/
+2026-02-22 01:46:43,874 | INFO | app | ⬅️  Status: 401
+2026-02-22 01:52:32,659 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin-only
+2026-02-22 01:52:32,670 | INFO | app | ⬅️  Status: 404
