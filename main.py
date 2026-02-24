@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 import uvicorn
 import os
@@ -15,7 +16,16 @@ from models import order_model
 from routes import auth
 from routes import product
 from routes import order
-from routes import auth, order
+from routes import admin_routes
+from routes import user_web
+from routes import user_pages
+from routes import wallet_routes
+from routes import admin_pages
+
+
+
+
+
 
 
 from core.logger import setup_logger
@@ -26,20 +36,17 @@ DB_FILE = "app.db"
 
 
 # =========================
-# LIFESPAN (Startup & Shutdown)
+# LIFESPAN
 # =========================
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("🚀 Starting application...")
 
-    # Cek file database
     if not os.path.exists(DB_FILE):
         logger.warning("⚠️ Database file not found. Creating new database...")
     else:
         logger.info("✅ Database file found.")
 
-    # Buat tabel kalau belum ada
     Base.metadata.create_all(bind=engine)
     logger.info("🔥 Tables checked/created successfully")
 
@@ -51,7 +58,6 @@ async def lifespan(app: FastAPI):
 # =========================
 # APP FACTORY
 # =========================
-
 def create_app() -> FastAPI:
     app = FastAPI(
         title="Digital Store API",
@@ -59,10 +65,7 @@ def create_app() -> FastAPI:
         lifespan=lifespan
     )
 
-    # =========================
-    # REQUEST LOGGER
-    # =========================
-
+    # Request Logger
     @app.middleware("http")
     async def log_requests(request: Request, call_next):
         logger.info(f"➡️  {request.method} {request.url}")
@@ -70,10 +73,7 @@ def create_app() -> FastAPI:
         logger.info(f"⬅️  Status: {response.status_code}")
         return response
 
-    # =========================
     # CORS
-    # =========================
-
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -82,18 +82,23 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
-    # =========================
-    # ROUTERS
-    # =========================
+    # STATIC FILES (fix CSS 404)
+    app.mount("/static", StaticFiles(directory="static"), name="static")
 
+    # ROUTERS (TIDAK DOUBEL)
     app.include_router(auth.router)
+    app.include_router(user_web.router)
     app.include_router(product.router)
     app.include_router(order.router)
-    app.include_router(order.router)
+    app.include_router(admin_routes.router)
+    app.include_router(user_pages.router)
+    app.include_router(wallet_routes.router)
+    app.include_router(admin_pages.router)
+    
+    
+    
+    
 
-    # =========================
-    # ROOT ENDPOINT
-    # =========================
 
     @app.get("/")
     def root():
@@ -102,18 +107,15 @@ def create_app() -> FastAPI:
     return app
 
 
+
 app = create_app()
 
-
-# =========================
-# RUN SERVER
-# =========================
 
 if __name__ == "__main__":
     uvicorn.run(
         "main:app",
         host="0.0.0.0",
-        port=8000,
+        port=8001,
         reload=True,
         log_level="info"
     )

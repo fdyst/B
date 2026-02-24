@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Login</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form method="post" action="/user/login">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <a href="/user/register">Daftar</a> |
+    <a href="/user/forgot">Lupa Password?</a>
+    {% if error %}
+      <p style="color:red;">{{ error }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Forgot Password</h2>
+    <form method="post" action="/user/forgot">
+      <input type="email" name="email" placeholder="Masukkan Email" required>
+      <button type="submit">Reset Password</button>
+    </form>
+    <a href="/user/login">Kembali ke login</a>
+    {% if message %}
+      <p style="color:green;">{{ message }}</p>
+    {% endif %}
+  </div>
+</body>
+</html>

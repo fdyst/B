@@ -1,0 +1,49 @@
+{% extends "layouts/dashboard_base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block dashboard_content %}
+
+<!-- Saldo Card -->
+<div class="saldo-card">
+    <p>Saldo Anda</p>
+    <h1 id="saldoAmount">Rp 0</h1>
+</div>
+
+<!-- Menu Grid -->
+<div class="menu-grid">
+    <a href="/transfer" class="menu-item">
+        <div class="menu-icon">💸</div>
+        <p>Transfer</p>
+    </a>
+
+    <a href="/topup" class="menu-item">
+        <div class="menu-icon">⬆️</div>
+        <p>Top Up</p>
+    </a>
+
+    <a href="/history" class="menu-item">
+        <div class="menu-icon">🧾</div>
+        <p>History</p>
+    </a>
+
+    <a href="/profile" class="menu-item">
+        <div class="menu-icon">👤</div>
+        <p>Profile</p>
+    </a>
+</div>
+
+<h3 style="margin-top:30px;">Layanan</h3>
+
+<div class="menu-grid">
+    <a href="#" class="menu-item">📱<br>Pulsa</a>
+    <a href="#" class="menu-item">💡<br>Token Listrik</a>
+    <a href="#" class="menu-item">🌐<br>Paket Data</a>
+    <a href="#" class="menu-item">🚰<br>PDAM</a>
+    <a href="#" class="menu-item">🏥<br>BPJS</a>
+    <a href="#" class="menu-item">🎮<br>Game</a>
+    <a href="#" class="menu-item">📺<br>TV Kabel</a>
+    <a href="#" class="menu-item">💳<br>Multifinance</a>
+</div>
+
+{% endblock %}

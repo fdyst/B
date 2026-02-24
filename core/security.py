@@ -8,12 +8,16 @@ from sqlalchemy.orm import Session
 from database.connection import SessionLocal
 from models.user_model import User
 
-SECRET_KEY = "SECRET123"
+# =========================
+# CONFIG
+# =========================
+
+SECRET_KEY = "SECRET123"  # ganti di production
 ALGORITHM = "HS256"
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-# FIX: tambahkan slash di depan
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 
@@ -21,18 +25,19 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 # PASSWORD
 # =========================
 
-def hash_password(password: str):
+def get_password_hash(password: str) -> str:
     return pwd_context.hash(password)
 
-def verify_password(plain, hashed):
-    return pwd_context.verify(plain, hashed)
+
+def verify_password(plain_password: str, hashed_password: str) -> bool:
+    return pwd_context.verify(plain_password, hashed_password)
 
 
 # =========================
 # TOKEN
 # =========================
 
-def create_access_token(data: dict, expires_delta: int = 60):
+def create_access_token(data: dict, expires_delta: int = ACCESS_TOKEN_EXPIRE_MINUTES):
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=expires_delta)
     to_encode.update({"exp": expire})

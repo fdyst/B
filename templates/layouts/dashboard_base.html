@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/dashboard.css">
+{% endblock %}
+
+{% block content %}
+<div class="app-container">
+
+    <!-- Top Navbar -->
+    <header class="topbar">
+        <div class="topbar-left">
+            <h3 class="app-name">FintechApp</h3>
+        </div>
+        <div class="topbar-right">
+            <button id="logoutBtn">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block dashboard_content %}{% endblock %}
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="/dashboard" class="nav-item">Home</a>
+        <a href="/history" class="nav-item">History</a>
+        <a href="/profile" class="nav-item">Profile</a>
+    </nav>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/user/dashboard.js"></script>
+{% endblock %}

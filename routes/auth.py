@@ -1,8 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
 import secrets
 
+from models.wallet_model import Wallet
 from database.connection import SessionLocal
 from models.user_model import User
 from schemas.user_schema import (
@@ -12,14 +15,16 @@ from schemas.user_schema import (
     ResetPassword
 )
 from core.security import (
-    hash_password,
+    get_password_hash,
     verify_password,
     create_access_token,
     get_current_user,
-    require_admin
+    require_admin,
+    require_seller
 )
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
+templates = Jinja2Templates(directory="templates")
 
 
 # =========================
@@ -38,6 +43,12 @@ def get_db():
 # REGISTER
 # =========================
 
+@router.get("/register", response_class=HTMLResponse)
+def register_page(request: Request):
+    return templates.TemplateResponse("auth/register.html", {
+        "request": request
+    })
+
 @router.post("/register")
 def register(user: UserRegister, db: Session = Depends(get_db)):
     existing = db.query(User).filter(User.email == user.email).first()
@@ -46,20 +57,29 @@ def register(user: UserRegister, db: Session = Depends(get_db)):
 
     new_user = User(
         email=user.email,
-        password=hash_password(user.password),
-        role="user"  # default role
+        password=get_password_hash(user.password),
+        role="user"
     )
 
     db.add(new_user)
     db.commit()
+    db.refresh(new_user)
+
+    # 🔥 TAMBAHAN WALLET (AMAN)
+    wallet = Wallet(user_id=new_user.id)
+    db.add(wallet)
+    db.commit()
 
     return {"message": "Register berhasil"}
-
-
 # =========================
 # LOGIN
 # =========================
-
+@router.get("/login", response_class=HTMLResponse)
+def login_page(request: Request):
+    return templates.TemplateResponse("auth/login.html", {
+        "request": request
+    })
+    
 @router.post("/login")
 def login(user: UserLogin, db: Session = Depends(get_db)):
     db_user = db.query(User).filter(User.email == user.email).first()
@@ -73,7 +93,6 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
         "access_token": token,
         "token_type": "bearer"
     }
-
 
 # =========================
 # FORGOT PASSWORD

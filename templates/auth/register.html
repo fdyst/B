@@ -1,0 +1,23 @@
+{% extends "layouts/auth_base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block auth_content %}
+<h2>Daftar</h2>
+
+<form id="registerForm">
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Daftar</button>
+</form>
+
+<div class="auth-footer">
+    Sudah punya akun? <a href="/auth/login">Login</a>
+</div>
+
+<p id="errorMessage" style="color:red; text-align:center; margin-top:10px;"></p>
+{% endblock %}
+
+{% block extra_js %}
+<script src="/static/js/auth/register.js"></script>
+{% endblock %}

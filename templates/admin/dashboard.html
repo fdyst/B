@@ -1,0 +1,13 @@
+{% extends "layouts/admin_base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+<h1>Admin Dashboard</h1>
+
+<div class="stats">
+    <div class="stat-card">Total Users: <span id="totalUsers">0</span></div>
+    <div class="stat-card">Total Transaksi: <span id="totalTrx">0</span></div>
+    <div class="stat-card">Total Saldo: <span id="totalBalance">0</span></div>
+</div>
+
+{% endblock %}

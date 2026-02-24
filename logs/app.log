@@ -170,3 +170,385 @@
 2026-02-22 01:46:43,874 | INFO | app | ⬅️  Status: 401
 2026-02-22 01:52:32,659 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin-only
 2026-02-22 01:52:32,670 | INFO | app | ⬅️  Status: 404
+2026-02-22 20:50:38,380 | INFO | app | 🚀 Starting application...
+2026-02-22 20:50:38,399 | INFO | app | ✅ Database file found.
+2026-02-22 20:50:38,414 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 20:52:50,439 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin/login
+2026-02-22 20:52:50,557 | INFO | app | ⬅️  Status: 200
+2026-02-22 20:52:51,089 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/style.css
+2026-02-22 20:52:51,093 | INFO | app | ⬅️  Status: 404
+2026-02-22 20:52:51,292 | INFO | app | ➡️  GET http://127.0.0.1:8000/favicon.ico
+2026-02-22 20:52:51,295 | INFO | app | ⬅️  Status: 404
+2026-02-22 20:56:47,288 | WARNING | app | 🛑 Application shutting down
+2026-02-22 20:56:52,400 | INFO | app | 🚀 Starting application...
+2026-02-22 20:56:52,403 | INFO | app | ✅ Database file found.
+2026-02-22 20:56:52,435 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 20:56:52,472 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-22 20:56:52,474 | INFO | app | ⬅️  Status: 200
+2026-02-22 20:56:52,960 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-22 20:56:53,184 | INFO | app | ⬅️  Status: 200
+2026-02-22 20:57:27,971 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/register
+2026-02-22 20:57:28,522 | INFO | app | ⬅️  Status: 200
+2026-02-22 20:58:11,662 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-22 20:58:11,696 | INFO | app | ⬅️  Status: 200
+2026-02-22 20:58:11,738 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/style.css
+2026-02-22 20:58:11,740 | INFO | app | ⬅️  Status: 404
+2026-02-22 22:28:10,044 | INFO | app | 🚀 Starting application...
+2026-02-22 22:28:10,064 | INFO | app | ✅ Database file found.
+2026-02-22 22:28:10,085 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 22:28:27,674 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-22 22:28:27,744 | INFO | app | ⬅️  Status: 200
+2026-02-22 22:28:27,771 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/style.css
+2026-02-22 22:28:27,777 | INFO | app | ⬅️  Status: 200
+2026-02-22 22:28:55,722 | INFO | app | ➡️  GET http://127.0.0.1:8000//auth/register
+2026-02-22 22:28:55,726 | INFO | app | ⬅️  Status: 404
+2026-02-22 22:35:34,972 | WARNING | app | 🛑 Application shutting down
+2026-02-22 23:38:19,880 | INFO | app | 🚀 Starting application...
+2026-02-22 23:38:19,901 | INFO | app | ✅ Database file found.
+2026-02-22 23:38:19,925 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 23:39:40,497 | INFO | app | ➡️  GET http://127.0.0.1:8000/user/register
+2026-02-22 23:39:40,683 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:39:40,788 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/style.css
+2026-02-22 23:39:40,816 | INFO | app | ⬅️  Status: 304
+2026-02-22 23:40:01,953 | INFO | app | ➡️  POST http://127.0.0.1:8000/user/register
+2026-02-22 23:40:02,967 | INFO | app | ⬅️  Status: 302
+2026-02-22 23:40:03,049 | INFO | app | ➡️  GET http://127.0.0.1:8000/user/login
+2026-02-22 23:40:03,081 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:40:22,713 | INFO | app | ➡️  POST http://127.0.0.1:8000/user/login
+2026-02-22 23:40:23,195 | INFO | app | ⬅️  Status: 302
+2026-02-22 23:40:23,218 | INFO | app | ➡️  GET http://127.0.0.1:8000/user/dashboard
+2026-02-22 23:40:23,264 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:40:44,564 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-22 23:40:44,648 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:40:48,608 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-22 23:40:48,632 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:42:52,451 | WARNING | app | 🛑 Application shutting down
+2026-02-22 23:43:00,018 | INFO | app | 🚀 Starting application...
+2026-02-22 23:43:00,022 | INFO | app | ✅ Database file found.
+2026-02-22 23:43:00,041 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-22 23:43:09,624 | INFO | app | ➡️  GET http://127.0.0.1:8000/user/register
+2026-02-22 23:43:09,654 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:43:34,886 | INFO | app | ➡️  POST http://127.0.0.1:8000/user/register
+2026-02-22 23:43:35,535 | INFO | app | ⬅️  Status: 302
+2026-02-22 23:43:35,557 | INFO | app | ➡️  GET http://127.0.0.1:8000/user/login
+2026-02-22 23:43:35,588 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:43:49,296 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin/login
+2026-02-22 23:43:49,330 | INFO | app | ⬅️  Status: 200
+2026-02-22 23:44:32,059 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-22 23:44:32,116 | INFO | app | ⬅️  Status: 200
+2026-02-23 04:42:49,680 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-23 04:42:49,758 | INFO | app | ⬅️  Status: 200
+2026-02-23 04:42:49,816 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/style.css
+2026-02-23 04:42:49,854 | INFO | app | ⬅️  Status: 304
+2026-02-23 04:42:55,465 | INFO | app | ➡️  GET http://127.0.0.1:8000/user/register
+2026-02-23 04:42:55,469 | INFO | app | ⬅️  Status: 200
+2026-02-23 04:43:18,839 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-23 04:43:18,857 | INFO | app | ⬅️  Status: 200
+2026-02-23 04:59:27,217 | INFO | app | 🚀 Starting application...
+2026-02-23 04:59:27,233 | INFO | app | ✅ Database file found.
+2026-02-23 04:59:27,249 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-23 04:59:48,716 | INFO | app | ➡️  GET http://127.0.0.1:8001/admin/login
+2026-02-23 04:59:48,780 | INFO | app | ⬅️  Status: 200
+2026-02-23 04:59:48,843 | INFO | app | ➡️  GET http://127.0.0.1:8001/static/style.css
+2026-02-23 04:59:48,865 | INFO | app | ⬅️  Status: 200
+2026-02-23 04:59:49,009 | INFO | app | ➡️  GET http://127.0.0.1:8001/favicon.ico
+2026-02-23 04:59:49,012 | INFO | app | ⬅️  Status: 404
+2026-02-23 05:00:05,187 | INFO | app | ➡️  POST http://127.0.0.1:8001/admin/login
+2026-02-23 05:00:05,736 | INFO | app | ⬅️  Status: 302
+2026-02-23 05:00:05,782 | INFO | app | ➡️  GET http://127.0.0.1:8001/admin/dashboard
+2026-02-23 05:04:06,654 | INFO | app | 🚀 Starting application...
+2026-02-23 05:04:06,676 | WARNING | app | ⚠️ Database file not found. Creating new database...
+2026-02-23 05:04:06,885 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-23 05:06:10,365 | WARNING | app | 🛑 Application shutting down
+2026-02-23 05:06:24,422 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin/login
+2026-02-23 05:06:24,451 | INFO | app | ⬅️  Status: 200
+2026-02-23 05:06:35,541 | INFO | app | ➡️  POST http://127.0.0.1:8000/admin/login
+2026-02-23 05:06:36,019 | INFO | app | ⬅️  Status: 302
+2026-02-23 05:06:36,054 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin/dashboard
+2026-02-23 05:06:36,086 | INFO | app | ⬅️  Status: 200
+2026-02-24 13:16:16,754 | INFO | app | 🚀 Starting application...
+2026-02-24 13:16:16,774 | WARNING | app | ⚠️ Database file not found. Creating new database...
+2026-02-24 13:16:17,041 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 13:16:42,662 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-24 13:16:42,663 | INFO | app | ⬅️  Status: 200
+2026-02-24 13:16:43,871 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-24 13:16:44,100 | INFO | app | ⬅️  Status: 200
+2026-02-24 13:16:56,614 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin/stats
+2026-02-24 13:16:56,644 | INFO | app | ⬅️  Status: 401
+2026-02-24 21:06:14,299 | INFO | app | 🚀 Starting application...
+2026-02-24 21:06:14,301 | INFO | app | ✅ Database file found.
+2026-02-24 21:06:14,328 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:07:47,961 | INFO | app | ➡️  GET http://localhost:8000/auth/login
+2026-02-24 21:07:47,966 | INFO | app | ⬅️  Status: 405
+2026-02-24 21:07:48,161 | INFO | app | ➡️  GET http://localhost:8000/favicon.ico
+2026-02-24 21:07:48,162 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:08:18,168 | INFO | app | ➡️  GET http://127.0.0.1:8000/docs
+2026-02-24 21:08:18,174 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:08:18,815 | INFO | app | ➡️  GET http://127.0.0.1:8000/openapi.json
+2026-02-24 21:08:19,185 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:08:31,077 | INFO | app | ➡️  GET http://127.0.0.1:8000/auth/login
+2026-02-24 21:08:31,078 | INFO | app | ⬅️  Status: 405
+2026-02-24 21:08:31,162 | INFO | app | ➡️  GET http://127.0.0.1:8000/favicon.ico
+2026-02-24 21:08:31,164 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:13:07,239 | INFO | app | 🚀 Starting application...
+2026-02-24 21:13:07,261 | INFO | app | ✅ Database file found.
+2026-02-24 21:13:07,280 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:13:16,267 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:13:21,744 | INFO | app | 🚀 Starting application...
+2026-02-24 21:13:21,747 | INFO | app | ✅ Database file found.
+2026-02-24 21:13:21,762 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:13:24,060 | INFO | app | ➡️  GET http://127.0.0.1:8001/auth/login
+2026-02-24 21:13:24,064 | INFO | app | ⬅️  Status: 405
+2026-02-24 21:13:24,161 | INFO | app | ➡️  GET http://127.0.0.1:8001/favicon.ico
+2026-02-24 21:13:24,162 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:24:10,094 | INFO | app | 🚀 Starting application...
+2026-02-24 21:24:10,114 | INFO | app | ✅ Database file found.
+2026-02-24 21:24:10,136 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:24:14,526 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:24:14,531 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:24:19,932 | INFO | app | 🚀 Starting application...
+2026-02-24 21:24:19,934 | INFO | app | ✅ Database file found.
+2026-02-24 21:24:19,943 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:24:23,533 | INFO | app | ➡️  GET http://127.0.0.1:8002/auth/login
+2026-02-24 21:24:23,587 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:24:23,645 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/css/base.css
+2026-02-24 21:24:23,647 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/css/auth.css
+2026-02-24 21:24:23,664 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:24:23,670 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/js/api.js
+2026-02-24 21:24:23,672 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:24:23,678 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/js/auth/login.js
+2026-02-24 21:24:23,699 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:24:23,704 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:24:24,732 | INFO | app | ➡️  GET http://127.0.0.1:8002/favicon.ico
+2026-02-24 21:24:24,737 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:24:27,689 | INFO | app | ➡️  GET http://127.0.0.1:8002/auth/register
+2026-02-24 21:24:27,691 | INFO | app | ⬅️  Status: 405
+2026-02-24 21:26:03,400 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:26:09,162 | INFO | app | 🚀 Starting application...
+2026-02-24 21:26:09,166 | INFO | app | ✅ Database file found.
+2026-02-24 21:26:09,201 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:26:15,091 | INFO | app | ➡️  GET http://127.0.0.1:8002/auth/register
+2026-02-24 21:26:15,110 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:26:15,139 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:26:38,576 | INFO | app | ➡️  GET http://127.0.0.1:8002/docs
+2026-02-24 21:26:38,578 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:26:38,955 | INFO | app | ➡️  GET http://127.0.0.1:8002/openapi.json
+2026-02-24 21:26:39,200 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:27:17,044 | INFO | app | ➡️  POST http://127.0.0.1:8002/auth/register
+2026-02-24 21:30:14,719 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:31:07,958 | INFO | app | 🚀 Starting application...
+2026-02-24 21:31:07,977 | WARNING | app | ⚠️ Database file not found. Creating new database...
+2026-02-24 21:31:08,232 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:31:26,230 | INFO | app | ➡️  POST http://127.0.0.1:8002/auth/login
+2026-02-24 21:31:26,317 | INFO | app | ⬅️  Status: 400
+2026-02-24 21:31:28,648 | INFO | app | ➡️  GET http://127.0.0.1:8002/auth/register
+2026-02-24 21:31:28,658 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:35:44,038 | INFO | app | ➡️  GET http://127.0.0.1:8002/auth/register
+2026-02-24 21:35:44,104 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:35:44,133 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/js/auth/register.js
+2026-02-24 21:35:44,155 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:35:44,158 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/css/base.css
+2026-02-24 21:35:44,165 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/css/auth.css
+2026-02-24 21:35:44,167 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/js/api.js
+2026-02-24 21:35:44,172 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:35:44,177 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:35:44,178 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:35:46,914 | INFO | app | ➡️  GET http://127.0.0.1:8002/auth/register
+2026-02-24 21:35:46,916 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:35:46,958 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/js/auth/register.js
+2026-02-24 21:35:46,961 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:36:01,396 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:36:20,006 | INFO | app | 🚀 Starting application...
+2026-02-24 21:36:20,021 | INFO | app | ✅ Database file found.
+2026-02-24 21:36:20,040 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:36:38,516 | INFO | app | ➡️  POST http://127.0.0.1:8002/auth/register
+2026-02-24 21:36:39,186 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:36:39,223 | INFO | app | ➡️  GET http://127.0.0.1:8002/auth/login
+2026-02-24 21:36:39,274 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:36:39,338 | INFO | app | ➡️  GET http://127.0.0.1:8002/static/js/auth/login.js
+2026-02-24 21:36:39,346 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:36:48,582 | INFO | app | ➡️  POST http://127.0.0.1:8002/auth/login
+2026-02-24 21:36:48,977 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:36:49,028 | INFO | app | ➡️  GET http://127.0.0.1:8002/dashboard
+2026-02-24 21:36:49,030 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:42:28,999 | INFO | app | 🚀 Starting application...
+2026-02-24 21:42:29,020 | INFO | app | ✅ Database file found.
+2026-02-24 21:42:29,039 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:42:37,735 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:42:51,785 | INFO | app | ➡️  GET http://127.0.0.1:8003/auth/login
+2026-02-24 21:42:51,920 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:42:51,956 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/css/base.css
+2026-02-24 21:42:51,968 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:42:51,974 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/css/auth.css
+2026-02-24 21:42:51,994 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/js/api.js
+2026-02-24 21:42:51,996 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/js/auth/login.js
+2026-02-24 21:42:51,997 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:42:52,004 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:42:52,026 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:42:52,108 | INFO | app | ➡️  GET http://127.0.0.1:8003/favicon.ico
+2026-02-24 21:42:52,110 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:42:59,919 | INFO | app | ➡️  POST http://127.0.0.1:8003/auth/login
+2026-02-24 21:43:00,449 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:00,505 | INFO | app | ➡️  GET http://127.0.0.1:8003/dashboard
+2026-02-24 21:43:00,542 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:00,568 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/css/dashboard.css
+2026-02-24 21:43:00,571 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/js/user/dashboard.js
+2026-02-24 21:43:00,576 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:00,580 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:00,616 | INFO | app | ➡️  GET http://127.0.0.1:8003/wallet/me
+2026-02-24 21:43:00,618 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:43:00,621 | INFO | app | ➡️  GET http://127.0.0.1:8003/orders/me
+2026-02-24 21:43:00,661 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:14,974 | INFO | app | ➡️  GET http://127.0.0.1:8003/transfer
+2026-02-24 21:43:15,010 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:15,036 | INFO | app | ➡️  GET http://127.0.0.1:8003/wallet/me
+2026-02-24 21:43:15,040 | INFO | app | ➡️  GET http://127.0.0.1:8003/orders/me
+2026-02-24 21:43:15,041 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:43:15,058 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:19,685 | INFO | app | ➡️  GET http://127.0.0.1:8003/topup
+2026-02-24 21:43:19,686 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:43:22,127 | INFO | app | ➡️  GET http://127.0.0.1:8003/history
+2026-02-24 21:43:22,147 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:22,201 | INFO | app | ➡️  GET http://127.0.0.1:8003/wallet/me
+2026-02-24 21:43:22,205 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:43:22,208 | INFO | app | ➡️  GET http://127.0.0.1:8003/orders/me
+2026-02-24 21:43:22,227 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:43:23,604 | INFO | app | ➡️  GET http://127.0.0.1:8003/profile
+2026-02-24 21:43:23,611 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:47:34,262 | INFO | app | ➡️  GET http://127.0.0.1:8003/history
+2026-02-24 21:47:34,277 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:47:34,319 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/js/api.js
+2026-02-24 21:47:34,323 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/css/dashboard.css
+2026-02-24 21:47:34,335 | INFO | app | ➡️  GET http://127.0.0.1:8003/static/js/user/dashboard.js
+2026-02-24 21:47:34,359 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:47:34,363 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:47:34,367 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:47:34,409 | INFO | app | ➡️  GET http://127.0.0.1:8003/wallet/me
+2026-02-24 21:47:34,413 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:47:34,415 | INFO | app | ➡️  GET http://127.0.0.1:8003/orders/me
+2026-02-24 21:47:34,487 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:47:35,288 | INFO | app | ➡️  GET http://127.0.0.1:8003/profile
+2026-02-24 21:47:35,291 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:49:34,744 | INFO | app | 🚀 Starting application...
+2026-02-24 21:49:34,763 | INFO | app | ✅ Database file found.
+2026-02-24 21:49:34,837 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:49:55,677 | INFO | app | ➡️  GET http://127.0.0.1:8000/auth/login
+2026-02-24 21:49:55,790 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:49:55,812 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/css/base.css
+2026-02-24 21:49:55,814 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/css/auth.css
+2026-02-24 21:49:55,822 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/js/api.js
+2026-02-24 21:49:55,823 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/js/auth/login.js
+2026-02-24 21:49:55,854 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:49:55,857 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:49:55,859 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:49:55,863 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:50:03,622 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-24 21:50:04,147 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:50:04,179 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 21:50:04,236 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:50:04,295 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/css/dashboard.css
+2026-02-24 21:50:04,298 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/js/user/dashboard.js
+2026-02-24 21:50:04,303 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:50:04,308 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:50:04,331 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 21:50:04,338 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 21:50:04,370 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:50:04,402 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:50:08,222 | INFO | app | ➡️  GET http://127.0.0.1:8000/topup
+2026-02-24 21:50:08,224 | INFO | app | ⬅️  Status: 404
+2026-02-24 21:52:19,564 | WARNING | app | 🛑 Application shutting down
+2026-02-24 21:52:25,916 | INFO | app | 🚀 Starting application...
+2026-02-24 21:52:25,918 | INFO | app | ✅ Database file found.
+2026-02-24 21:52:25,960 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-24 21:52:33,375 | INFO | app | ➡️  GET http://127.0.0.1:8000/topup
+2026-02-24 21:52:33,413 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:52:33,534 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 21:52:33,543 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 21:52:33,638 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:52:33,640 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:52:44,108 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 21:52:44,120 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:52:44,172 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 21:52:44,182 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 21:52:44,200 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:52:44,213 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:53:30,568 | INFO | app | ➡️  GET http://127.0.0.1:8000/auth/login
+2026-02-24 21:53:30,594 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:53:33,036 | INFO | app | ➡️  POST http://127.0.0.1:8000/auth/login
+2026-02-24 21:53:33,564 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:53:33,595 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 21:53:33,598 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:53:33,633 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 21:53:33,636 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 21:53:33,695 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:53:33,699 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:54:09,564 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 21:54:09,567 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:54:09,618 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 21:54:09,623 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 21:54:09,644 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:54:09,653 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:58:41,161 | INFO | app | ➡️  GET http://127.0.0.1:8000/history
+2026-02-24 21:58:41,220 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:58:41,273 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/css/base.css
+2026-02-24 21:58:41,279 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/js/api.js
+2026-02-24 21:58:41,285 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/js/user/dashboard.js
+2026-02-24 21:58:41,290 | INFO | app | ➡️  GET http://127.0.0.1:8000/static/css/dashboard.css
+2026-02-24 21:58:41,318 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:58:41,319 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:58:41,321 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:58:41,322 | INFO | app | ⬅️  Status: 304
+2026-02-24 21:58:41,387 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 21:58:41,394 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 21:58:41,464 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:58:41,481 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:59:28,129 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 21:59:28,152 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:59:28,290 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 21:59:28,294 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 21:59:28,350 | INFO | app | ⬅️  Status: 200
+2026-02-24 21:59:28,353 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:00:50,032 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 22:00:50,040 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:00:50,074 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 22:00:50,079 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 22:00:50,163 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:00:50,178 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:01:19,894 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 22:01:19,897 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:01:19,954 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 22:01:19,957 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 22:01:19,990 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:01:19,998 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:01:20,986 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 22:01:20,988 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:01:21,017 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 22:01:21,023 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 22:01:21,042 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:01:21,047 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:42,488 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 22:02:42,511 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:42,636 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 22:02:42,640 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 22:02:42,726 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:42,746 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:43,722 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 22:02:43,725 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:43,775 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 22:02:43,778 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 22:02:43,801 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:43,810 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:44,842 | INFO | app | ➡️  GET http://127.0.0.1:8000/dashboard
+2026-02-24 22:02:44,845 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:44,871 | INFO | app | ➡️  GET http://127.0.0.1:8000/wallet/me
+2026-02-24 22:02:44,873 | INFO | app | ➡️  GET http://127.0.0.1:8000/orders/me
+2026-02-24 22:02:44,894 | INFO | app | ⬅️  Status: 200
+2026-02-24 22:02:44,899 | INFO | app | ⬅️  Status: 200
+2026-02-25 00:43:15,961 | INFO | app | 🚀 Starting application...
+2026-02-25 00:43:15,968 | INFO | app | ✅ Database file found.
+2026-02-25 00:43:15,990 | INFO | app | 🔥 Tables checked/created successfully
+2026-02-25 00:43:37,291 | INFO | app | ➡️  GET http://127.0.0.1:8000/favicon.ico
+2026-02-25 00:43:37,298 | INFO | app | ⬅️  Status: 404
+2026-02-25 00:43:48,557 | INFO | app | ➡️  GET http://127.0.0.1:8000/admin/login
+2026-02-25 00:43:48,561 | INFO | app | ⬅️  Status: 404
+2026-02-25 00:48:26,595 | WARNING | app | 🛑 Application shutting down
