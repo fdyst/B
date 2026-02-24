@@ -44,6 +44,97 @@ def create_access_token(data: dict, expires_delta: int = ACCESS_TOKEN_EXPIRE_MIN
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
 
+def decode_token(token: str):
+    """
+    Decode dan validasi JWT token
+    Return: payload dict jika valid, None jika invalid
+    """
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return payload
+    except jwt.ExpiredSignatureError:
+        print("⚠️  Token expired")
+        return None
+    except jwt.InvalidTokenError as e:
+        print(f"⚠️  Invalid token: {str(e)}")
+        return None
+    except Exception as e:
+        print(f"⚠️  Decode error: {str(e)}")
+        return None
+
+
+# =========================
+# DATABASE DEPENDENCY
+# =========================
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+# =========================
+# GET CURRENT USER
+# =========================
+
+def get_current_user(
+    token: str = Depends(oauth2_scheme),
+    db: Session = Depends(get_db)
+):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Invalid authentication credentials",
+    )
+
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        email: str = payload.get("sub")
+
+        if email is None:
+            raise credentials_exception
+
+    except JWTError:
+        raise credentials_exception
+
+    user = db.query(User).filter(User.email == email).first()
+
+    if user is None:
+        raise credentials_exception
+
+    return user
+
+
+# =========================
+# ROLE CHECKING
+# =========================
+
+def require_admin(current_user: User = Depends(get_current_user)):
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=403,
+            detail="Admin access required"
+        )
+    return current_user
+
+
+def require_seller(current_user: User = Depends(get_current_user)):
+    if current_user.role not in ["seller", "admin"]:
+        raise HTTPException(
+            status_code=403,
+            detail="Seller access required"
+        )
+    return current_user# TOKEN
+# =========================
+
+def create_access_token(data: dict, expires_delta: int = ACCESS_TOKEN_EXPIRE_MINUTES):
+    to_encode = data.copy()
+    expire = datetime.utcnow() + timedelta(minutes=expires_delta)
+    to_encode.update({"exp": expire})
+    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+
 # =========================
 # DATABASE DEPENDENCY
 # =========================
