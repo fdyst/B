@@ -1,0 +1,77 @@
+{% extends "layouts/dashboard_base.html" %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block dashboard_content %}
+
+<h2>{{ category.name }}</h2>
+
+<!-- INPUT TARGET -->
+<div class="ppob-input-section">
+    <input type="text" id="targetInput" placeholder="Masukkan Nomor / ID">
+    <button onclick="submitOrder()">Beli Sekarang</button>
+</div>
+
+<hr style="margin:20px 0;">
+
+<h3>Pilih Nominal</h3>
+
+<div class="nominal-grid">
+    {% for product in products %}
+        <div class="nominal-item"
+             data-id="{{ product.id }}"
+             data-price="{{ product.price_sell }}"
+             onclick="selectProduct(this)">
+             
+            <p>{{ product.name }}</p>
+            <strong>Rp {{ "{:,.0f}".format(product.price_sell) }}</strong>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+let selectedProduct = null;
+
+function selectProduct(el) {
+    document.querySelectorAll(".nominal-item")
+        .forEach(item => item.classList.remove("active"));
+
+    el.classList.add("active");
+    selectedProduct = el.dataset.id;
+}
+
+function submitOrder() {
+
+    const target = document.getElementById("targetInput").value;
+
+    if (!target) {
+        alert("Nomor / ID harus diisi!");
+        return;
+    }
+
+    if (!selectedProduct) {
+        alert("Pilih nominal terlebih dahulu!");
+        return;
+    }
+
+    // Kirim ke backend
+    fetch("/order", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            product_id: selectedProduct,
+            target: target
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+        location.reload();
+    })
+    .catch(err => {
+        alert("Terjadi kesalahan");
+    });
+}
+</script>
+
+{% endblock %}

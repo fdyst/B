@@ -1,4 +1,5 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, JSON
+from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, JSON, ForeignKey
+from sqlalchemy.orm import relationship
 from database.connection import Base
 from datetime import datetime
 
@@ -9,17 +10,31 @@ class Product(Base):
     id = Column(Integer, primary_key=True, index=True)
 
     name = Column(String, nullable=False)
-    category = Column(String, nullable=False)
 
-    price = Column(Float, nullable=False)         # harga jual
-    cost_price = Column(Float, nullable=True)     # harga dari vendor (optional)
+    # === RELATION CATEGORY ===
+    category_id = Column(Integer, ForeignKey("categories.id"))
+    category = relationship("Category")
 
-    vendor = Column(String, nullable=True)        # digiflazz / manual / dll
-    vendor_code = Column(String, nullable=True)   # kode produk di vendor
+    # === TYPE ===
+    product_type = Column(String, nullable=False, default="manual")
 
-    required_fields = Column(JSON, nullable=True) # dynamic input field
+    # === PRICING ===
+    price_base = Column(Float, nullable=True)
+    margin_type = Column(String, nullable=True)
+    margin_value = Column(Float, nullable=True)
+    price_sell = Column(Float, nullable=False)
+
+    # === VENDOR ===
+    vendor = Column(String, nullable=True)
+    vendor_code = Column(String, nullable=True)
+
+    required_fields = Column(JSON, nullable=True)
 
     is_active = Column(Boolean, default=True)
     is_featured = Column(Boolean, default=False)
 
     created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    # === STOCK RELATION ===
+    stocks = relationship("ProductStock", backref="product")

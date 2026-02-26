@@ -8,3 +8,118 @@ button { padding: 10px 20px; background: #007bff; color: #fff; border: none; cur
         grid-template-columns: repeat(4, 1fr);
     }
 }
+.ppob-input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.ppob-input-section input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.ppob-input-section button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #4f46e5;
+    color: white;
+    font-weight: bold;
+}
+
+.nominal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.nominal-item {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nominal-item.active {
+    border: 2px solid #4f46e5;
+    background: #eef2ff;
+}
+
+.ppob-container {
+    max-width: 500px;
+    margin: auto;
+}
+
+.ppob-title {
+    margin-bottom: 15px;
+}
+
+.ppob-card {
+    background: white;
+    padding: 16px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.input-group button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nominal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.nominal-item {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.nominal-item:hover {
+    transform: scale(1.03);
+}
+
+.nominal-item.active {
+    border: 2px solid #2563eb;
+    background: #eff6ff;
+}
+
+.nominal-name {
+    font-size: 14px;
+}
+
+.nominal-price {
+    font-weight: bold;
+    margin-top: 4px;
+}

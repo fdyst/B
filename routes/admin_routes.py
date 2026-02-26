@@ -2,16 +2,16 @@ from fastapi import APIRouter, Request, Form, Depends
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
-from core.security import get_db, verify_password
+from core.security import get_db, verify_password, require_admin
 from models.user_model import User
-from core.security import require_admin
-router = APIRouter()
+from models.order_model import Order
+
+router = APIRouter(prefix="/admin", tags=["Admin API"])
 templates = Jinja2Templates(directory="templates")
-router = APIRouter(prefix="/admin", tags=["Admin"])
 
 
 # =========================
-# ADMIN LOGIN PAGE
+# API ENDPOINTS (untuk frontend call, bukan HTML)
 # =========================
 
 @router.get("/stats")
@@ -19,6 +19,7 @@ def admin_stats(
     db: Session = Depends(get_db),
     current_user: User = Depends(require_admin)
 ):
+    """Get admin statistics"""
     total_users = db.query(User).count()
     total_admin = db.query(User).filter(User.role == "admin").count()
     total_seller = db.query(User).filter(User.role == "seller").count()
@@ -30,96 +31,77 @@ def admin_stats(
         "total_seller": total_seller,
         "total_orders": total_orders
     }
-    
-@router.get("/admin/login", response_class=HTMLResponse)
-def admin_login_page(request: Request):
-    return templates.TemplateResponse("admin_login.html", {"request": request})
 
-@router.post("/admin/login", response_class=HTMLResponse)
-def admin_login(request: Request, email: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == email, User.role == "admin").first()
-    if not user or not verify_password(password, user.password):
-        return templates.TemplateResponse("admin_login.html", {"request": request, "error": "Email atau password salah"})
-    
-    response = RedirectResponse("/admin/dashboard", status_code=302)
-    response.set_cookie("admin_email", user.email)
-    return response
 
-# =========================
-# DASHBOARD PAGE
-# =========================
-@router.get("/admin/dashboard", response_class=HTMLResponse)
-def admin_dashboard(request: Request, db: Session = Depends(get_db)):
-    admin_email = request.cookies.get("admin_email")
-    if not admin_email:
-        return RedirectResponse("/admin/login")
-    
-    users = db.query(User).all()
-    from models.order_model import Order
-    orders = db.query(Order).all()
-    return templates.TemplateResponse("admin_dashboard.html", {
-        "request": request,
-        "admin_email": admin_email,
-        "users": users,
-        "orders": orders
-    })
-
-@router.get("/users")
+@router.get("/api/users")
 def list_users(
     db: Session = Depends(get_db),
     current_user: User = Depends(require_admin)
 ):
-    return db.query(User).all()
+    """Get all users (API endpoint)"""
+    users = db.query(User).all()
+    return {
+        "total": len(users),
+        "users": [
+            {"id": u.id, "email": u.email, "role": u.role}
+            for u in users
+        ]
+    }
 
 
-@router.delete("/users/{user_id}")
+@router.delete("/api/users/{user_id}")
 def delete_user(
     user_id: int,
     db: Session = Depends(get_db),
     current_user: User = Depends(require_admin)
 ):
+    """Delete a user"""
     user = db.query(User).filter(User.id == user_id).first()
 
     if not user:
-        return {"message": "User not found"}
+        return {"message": "User not found", "success": False}
 
     db.delete(user)
     db.commit()
 
-    return {"message": "User deleted"}
+    return {"message": "User deleted", "success": True}
 
-@router.get("/orders")
+
+@router.get("/api/orders")
 def list_orders(
     db: Session = Depends(get_db),
     current_user: User = Depends(require_admin)
 ):
-    return db.query(Order).all()
+    """Get all orders (API endpoint)"""
+    orders = db.query(Order).all()
+    return {
+        "total": len(orders),
+        "orders": [
+            {
+                "id": o.id,
+                "order_number": o.order_number,
+                "status": o.status,
+                "price": o.price
+            }
+            for o in orders
+        ]
+    }
 
 
-@router.put("/orders/{order_id}/status")
+@router.put("/api/orders/{order_id}/status")
 def update_order_status(
     order_id: int,
     status: str,
     db: Session = Depends(get_db),
     current_user: User = Depends(require_admin)
 ):
+    """Update order status"""
     order = db.query(Order).filter(Order.id == order_id).first()
 
     if not order:
-        return {"message": "Order not found"}
+        return {"message": "Order not found", "success": False}
 
     order.status = status
     db.commit()
 
-    return {"message": "Order updated"}
-
-
-
-# =========================
-# LOGOUT
-# =========================
-@router.get("/admin/logout")
-def admin_logout():
-    response = RedirectResponse("/admin/login")
-    response.delete_cookie("admin_email")
-    return response
+    return {"message": "Order status updated", "success": True, "new_status": status}

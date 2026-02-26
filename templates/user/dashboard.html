@@ -36,14 +36,16 @@
 <h3 style="margin-top:30px;">Layanan</h3>
 
 <div class="menu-grid">
-    <a href="#" class="menu-item">📱<br>Pulsa</a>
-    <a href="#" class="menu-item">💡<br>Token Listrik</a>
-    <a href="#" class="menu-item">🌐<br>Paket Data</a>
-    <a href="#" class="menu-item">🚰<br>PDAM</a>
-    <a href="#" class="menu-item">🏥<br>BPJS</a>
-    <a href="#" class="menu-item">🎮<br>Game</a>
-    <a href="#" class="menu-item">📺<br>TV Kabel</a>
-    <a href="#" class="menu-item">💳<br>Multifinance</a>
+    {% for category in categories %}
+        <a href="/category/{{ category.id }}" class="menu-item">
+            {% if category.icon %}
+                <img src="/static/{{ category.icon }}" class="menu-icon-img">
+            {% else %}
+                <div class="menu-icon">📦</div>
+            {% endif %}
+            <p>{{ category.name }}</p>
+        </a>
+    {% endfor %}
 </div>
 
 {% endblock %}

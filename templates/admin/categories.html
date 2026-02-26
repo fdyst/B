@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Kategori</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+}
+
+.header {
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.container {
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.status {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+.btn-primary { background: #667eea; color: white; }
+.btn-danger { background: #e74c3c; color: white; }
+.btn-warning { background: #f39c12; color: white; }
+
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #667eea;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    border-radius: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h3>📂 Manajemen Kategori</h3>
+</div>
+
+<div class="container" id="categoryList">
+    Loading...
+</div>
+
+<button class="fab" onclick="openModal()">+</button>
+
+<div class="modal" id="categoryModal">
+    <div class="modal-content">
+        <h3>Tambah Kategori</h3>
+        <input type="text" id="categoryName" placeholder="Nama Kategori">
+        <button class="btn-primary" onclick="createCategory()">Simpan</button>
+        <button onclick="closeModal()">Batal</button>
+    </div>
+</div>
+
+<script src="/static/js/admin/categories.js"></script>
+</body>
+</html>

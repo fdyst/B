@@ -22,7 +22,7 @@ def get_db():
 
 @router.get("/user/register", response_class=HTMLResponse)
 def register_page(request: Request):
-    return templates.TemplateResponse("user_register.html", {"request": request})
+    return templates.TemplateResponse("user/register.html", {"request": request})
 
 
 @router.post("/user/register", response_class=HTMLResponse)
@@ -34,7 +34,7 @@ def register(
 ):
     existing = db.query(User).filter(User.email == email).first()
     if existing:
-        return templates.TemplateResponse("user_register.html",
+        return templates.TemplateResponse("user/register.html",
                                           {"request": request, "error": "Email sudah terdaftar"})
 
     new_user = User(
@@ -52,7 +52,7 @@ def register(
 
 @router.get("/user/login", response_class=HTMLResponse)
 def login_page(request: Request):
-    return templates.TemplateResponse("user_login.html", {"request": request})
+    return templates.TemplateResponse("user/login.html", {"request": request})
 
 
 @router.post("/user/login", response_class=HTMLResponse)
@@ -65,7 +65,7 @@ def login(
     user = db.query(User).filter(User.email == email).first()
 
     if not user or not verify_password(password, user.password):
-        return templates.TemplateResponse("user_login.html",
+        return templates.TemplateResponse("user/login.html",
                                           {"request": request, "error": "Email atau password salah"})
 
     response = RedirectResponse("/user/dashboard", status_code=302)
@@ -81,7 +81,7 @@ def dashboard(request: Request):
     if not email:
         return RedirectResponse("/user/login")
 
-    return templates.TemplateResponse("user_dashboard.html",
+    return templates.TemplateResponse("user/dashboard.html",
                                       {"request": request, "email": email})
 
 
