@@ -1,13 +1,460 @@
-{% extends "layouts/admin_base.html" %}
-{% block title %}Admin Dashboard{% endblock %}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Admin Dashboard</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-{% block content %}
-<h1>Admin Dashboard</h1>
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            overflow-x: hidden;
+        }
 
-<div class="stats">
-    <div class="stat-card">Total Users: <span id="totalUsers">0</span></div>
-    <div class="stat-card">Total Transaksi: <span id="totalTrx">0</span></div>
-    <div class="stat-card">Total Saldo: <span id="totalBalance">0</span></div>
-</div>
+        /* NAVBAR */
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-{% endblock %}
+        .navbar h1 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* SIDEBAR MOBILE */
+        .sidebar {
+            position: fixed;
+            left: -100%;
+            top: 0;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: white;
+            z-index: 99;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            padding-top: 60px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 15px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: #f5f5f5;
+            color: #667eea;
+        }
+
+        .sidebar a.logout {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 98;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* CONTAINER */
+        .container {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .welcome {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .welcome h2 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .welcome p {
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* CARDS GRID */
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 480px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* CARD STYLE */
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        .card:active {
+            transform: scale(0.95);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 12px;
+        }
+
+        .card a {
+            display: inline-block;
+            padding: 10px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.2s;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .card a:active {
+            transform: scale(0.95);
+        }
+
+        /* STATS SECTION */
+        .stats {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .stats h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .stat-value {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* BOTTOM NAV (Optional untuk navigasi cepat) */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            z-index: 50;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .bottom-nav a {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            color: #999;
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.3s;
+            border: none;
+        }
+
+        .bottom-nav a:active,
+        .bottom-nav a.active {
+            color: #667eea;
+        }
+
+        .bottom-nav span {
+            display: block;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        /* ADJUST CONTAINER UNTUK BOTTOM NAV */
+        .container {
+            padding-bottom: 100px;
+        }
+
+        /* RESPONSIF TABLET */
+        @media (min-width: 768px) {
+            .sidebar {
+                position: static;
+                left: 0;
+                width: 250px;
+                height: auto;
+                padding-top: 0;
+                box-shadow: none;
+                background: none;
+            }
+
+            .menu-btn {
+                display: none;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: flex-start;
+                gap: 30px;
+            }
+
+            .navbar h1 {
+                flex: 1;
+            }
+
+            .overlay {
+                display: none !important;
+            }
+
+            .container {
+                padding-bottom: 40px;
+            }
+
+            .bottom-nav {
+                display: none;
+            }
+
+            .main-layout {
+                display: flex;
+                gap: 20px;
+            }
+
+            .main-content {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <h1>📊 Admin</h1>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="sidebar" id="sidebar">
+        <a href="/admin/dashboard" class="active">📊 Dashboard</a>
+        <a href="/admin/users">👥 Users</a>
+        <a href="/admin/products">📦 Products</a>
+        <a href="/admin/transactions">💳 Transactions</a>
+        <hr style="border: none; border-top: 1px solid #eee; margin: 10px 0;">
+        <a href="/admin/logout" class="logout">🚪 Logout</a>
+    </div>
+
+    <div class="main-layout">
+        <div class="container">
+            <div class="welcome">
+                <h2>👋 Selamat Datang</h2>
+                <p>Kelola platform Anda dari sini</p>
+            </div>
+
+            <div class="stats">
+                <h3>📈 Statistik</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Total Users</span>
+                    <span class="stat-value">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Products</span>
+                    <span class="stat-value">-</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Transactions</span>
+                    <span class="stat-value">-</span>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">👥</div>
+                    <h3>Users</h3>
+                    <p>Kelola pengguna</p>
+                    <a href="/admin/users">Lihat</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📦</div>
+                    <h3>Products</h3>
+                    <p>Kelola produk</p>
+                    <a href="/admin/products">Lihat</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💳</div>
+                    <h3>Transactions</h3>
+                    <p>Monitor transaksi</p>
+                    <a href="/admin/transactions">Lihat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAVIGATION (hanya di mobile) -->
+    <div class="bottom-nav">
+        <a href="/admin/dashboard" class="active">
+            <span>📊</span>
+            Dashboard
+        </a>
+        <a href="/admin/users">
+            <span>👥</span>
+            Users
+        </a>
+        <a href="/admin/products">
+            <span>📦</span>
+            Products
+        </a>
+        <a href="/admin/transactions">
+            <span>💳</span>
+            Transactions
+        </a>
+    </div>
+
+    <script>
+        // MOBILE MENU TOGGLE
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Close sidebar when clicking a link
+        const sidebarLinks = sidebar.querySelectorAll('a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+
+        // Set active menu item
+        const currentPage = window.location.pathname;
+        sidebarLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
+        });
+
+        // Bottom nav active state
+        const bottomNavLinks = document.querySelectorAll('.bottom-nav a');
+        bottomNavLinks.forEach(link => {
+            if (link.href.includes(currentPage)) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% extends "layouts/dashboard_base.html" %}
+{% block title %}{{ category.name }}{% endblock %}
+{% block dashboard_content %}
+
+<div class="ppob-container">
+
+    <h2 class="ppob-title">{{ category.name }}</h2>
+
+    <!-- Card Input -->
+    <div class="ppob-card">
+        <label>Nomor / ID Tujuan</label>
+        <div class="input-group">
+            <input type="text" id="targetInput" placeholder="Masukkan nomor atau ID">
+            <button onclick="submitOrder()">Beli</button>
+        </div>
+    </div>
+
+    <!-- Nominal Section -->
+    <div class="ppob-card">
+        <h3>Pilih Nominal</h3>
+        <div class="nominal-grid">
+            {% for product in products %}
+            <div class="nominal-item"
+                 data-id="{{ product.id }}"
+                 onclick="selectProduct(this)">
+                <p class="nominal-name">{{ product.name }}</p>
+                <p class="nominal-price">
+                    Rp {{ "{:,.0f}".format(product.price_sell) }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<script>
+let selectedProduct = null;
+
+function selectProduct(el) {
+    document.querySelectorAll(".nominal-item")
+        .forEach(item => item.classList.remove("active"));
+
+    el.classList.add("active");
+    selectedProduct = el.dataset.id;
+}
+
+function submitOrder() {
+
+    const target = document.getElementById("targetInput").value;
+
+    if (!target) {
+        alert("Nomor / ID harus diisi!");
+        return;
+    }
+
+    if (!selectedProduct) {
+        alert("Pilih nominal dulu!");
+        return;
+    }
+
+    fetch("/order", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            product_id: selectedProduct,
+            target: target
+        })
+    })
+    .then(res => res.json())
+    .then(data => alert(data.message))
+}
+</script>
+
+{% endblock %}
